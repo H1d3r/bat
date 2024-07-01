@@ -7,6 +7,7 @@
 - `bat --squeeze-limit` to set the maximum number of empty consecutive when using `--squeeze-blank`, see #1441 (@eth-p) and #2665 (@einfachIrgendwer0815)
 - `PrettyPrinter::squeeze_empty_lines` to support line squeezing for bat as a library, see #1441 (@eth-p) and #2665 (@einfachIrgendwer0815)
 - Syntax highlighting for JavaScript files that start with `#!/usr/bin/env bun` #2913 (@sharunkumar)
+- `bat --strip-ansi={never,always,auto}` to remove ANSI escape sequences from bat's input, see #2999 (@eth-p)
 
 ## Bugfixes
 
@@ -36,6 +37,10 @@
 - Faster startup by offloading glob matcher building to a worker thread #2868 (@cyqsimon)
 - Display which theme is the default one in basic output (no colors), see #2937 (@sblondon)
 - Display which theme is the default one in colored output, see #2838 (@sblondon)
+- Add aarch64-apple-darwin ("Apple Silicon") binary tarballs to releases, see #2967 (@someposer)
+- Update the Lisp syntax, see #2970 (@ccqpein)
+- Use bat's ANSI iterator during tab expansion, see #2998 (@eth-p)
+- Support 'statically linked binary' for aarch64 in 'Release' page, see #2992 (@tzq0301)
 
 ## Syntaxes
 

@@ -373,6 +373,14 @@ You can install `bat` using the [nix package manager](https://nixos.org/nix):
 nix-env -i bat
 ```
 
+### Via flox
+
+You can install `bat` using [Flox](https://flox.dev)
+
+```bash
+flox install bat
+```
+
 ### On openSUSE
 
 You can install `bat` with zypper:
@@ -729,7 +737,7 @@ your `PATH` or [define an environment variable](#using-a-different-pager). The [
 Windows 10 natively supports colors in both `conhost.exe` (Command Prompt) and PowerShell since
 [v1511](https://en.wikipedia.org/wiki/Windows_10_version_history#Version_1511_(November_Update)), as
 well as in newer versions of bash. On earlier versions of Windows, you can use
-[Cmder](http://cmder.net/), which includes [ConEmu](https://conemu.github.io/).
+[Cmder](http://cmder.app/), which includes [ConEmu](https://conemu.github.io/).
 
 **Note:** Old versions of `less` do not correctly interpret colors on Windows. To fix this, you can add the optional Unix tools to your PATH when installing Git. If you don’t have any other pagers installed, you can disable paging entirely by passing `--paging=never` or by setting `BAT_PAGER` to an empty string.
 
@@ -759,8 +767,13 @@ bat() {
 
 If an input file contains color codes or other ANSI escape sequences or control characters, `bat` will have problems
 performing syntax highlighting and text wrapping, and thus the output can become garbled.
-When displaying such files it is recommended to disable both syntax highlighting and wrapping by
+
+If your version of `bat` supports the `--strip-ansi=auto` option, it can be used to remove such sequences
+before syntax highlighting. Alternatively, you may disable both syntax highlighting and wrapping by
 passing the `--color=never --wrap=never` options to `bat`.
+
+> [!NOTE]
+> The `auto` option of `--strip-ansi` avoids removing escape sequences when the syntax is plain text.
 
 ### Terminals & colors
 
