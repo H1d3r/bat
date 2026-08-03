@@ -54,7 +54,7 @@ semver = "0.10"
 path_abs = { version = "0.5", default-features = false }
 
 [dependencies.git2]
-version = "0.13"
+version = "0.20"
 optional = true
 default-features = false
 
